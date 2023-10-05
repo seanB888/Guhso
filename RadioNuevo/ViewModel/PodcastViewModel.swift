@@ -9,13 +9,13 @@ import Foundation
 
 class PodcastViewModel: ObservableObject {
     @Published var podcast: Podcast?
-    private var podcastParser: PodcastParser?
+    var podcastParser: PodcastParser?
     
     init() {
         fetchPodcastData()
     }
     
-    private func fetchPodcastData() {
+    func fetchPodcastData() {
         podcastParser = PodcastParser()
         podcastParser?.parse()
         
