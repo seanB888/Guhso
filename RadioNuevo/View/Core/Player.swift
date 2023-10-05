@@ -45,10 +45,10 @@ struct Player: View {
                         .foregroundStyle(Color.theme.accent1)
                     Spacer()
                     // Share button...
-//                    CircleButton(icon: "ellipsis", action: {
-//
-//                    }, backgroundColor: Color.theme.brand)
-//                        .rotationEffect(Angle(degrees: 90))
+                    //                    CircleButton(icon: "ellipsis", action: {
+                    //
+                    //                    }, backgroundColor: Color.theme.brand)
+                    //                        .rotationEffect(Angle(degrees: 90))
                     
                     ShareLink(item: shareImage,
                               preview: SharePreview("Share this Episode", image: shareImage)
@@ -90,13 +90,18 @@ struct Player: View {
                 .lineLimit(3)
                 
                 // Player Controls...
-                PlayerControl(action: {
-                    if let url = URL(string: currentEpisode?.enclosure?.url ?? "") {
-                        viewModel.audioPlayerManager.togglePlayback(url: url)
-                    }
-                })
-                    .padding(.top, 10)
-                    .padding(.bottom, 50)
+                PlayerControl(
+                    audioPlayerManager: viewModel.audioPlayerManager,
+                    actionPlay: {
+                        if let url = URL(string: currentEpisode?.enclosure?.url ?? "") {
+                            viewModel.audioPlayerManager.togglePlayback(url: url)
+                        }
+                    },
+                    actionBackward: {viewModel.audioPlayerManager.skip(by: -15)},
+                    actionForward: {viewModel.audioPlayerManager.skip(by: 15)}
+                )
+                .padding(.top, 10)
+                .padding(.bottom, 50)
                 
             }
             .padding(25)

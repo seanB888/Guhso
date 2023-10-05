@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct CustomProgressBar: View {
-    @State private var circleSize: CGFloat = 12
-    var currentTime: TimeInterval
+    @Binding var currentTime: TimeInterval
     var duration: TimeInterval
+    var onScrub: (TimeInterval) -> Void
+    
+    @State private var circleSize: CGFloat = 12
     
     var body: some View {
         VStack(spacing: 5) {
@@ -30,10 +32,10 @@ struct CustomProgressBar: View {
                     Circle()
                         .foregroundStyle(Color.theme.brand)
                         .frame(width: circleSize, height: circleSize)
-                        .offset(x: geometry.size.width * CGFloat(currentTime / duration) - 5)
+                        .offset(x: geometry.size.width * CGFloat(currentTime / duration) - circleSize / 2)
                         .gesture(DragGesture().onChanged { value in
-                            _ = min(max(0, value.location.x / geometry.size.width * duration), duration)
-                            // currentTime = newTime
+                            let newTime = min(max(0, value.location.x / geometry.size.width * duration), duration)
+                            onScrub(newTime)
                         })
                 }
             }
@@ -51,6 +53,6 @@ struct CustomProgressBar: View {
     }
 }
 
-#Preview {
-    CustomProgressBar(currentTime: 1.16, duration: 3.50)
-}
+//#Preview {
+//    CustomProgressBar(currentTime: <#Binding<TimeInterval>#>, duration: <#TimeInterval#>, onScrub: <#(TimeInterval) -> Void#>)
+//}

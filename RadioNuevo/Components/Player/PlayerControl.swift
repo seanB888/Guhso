@@ -8,20 +8,30 @@
 import SwiftUI
 
 struct PlayerControl: View {
+    @ObservedObject var viewModel = PodcastViewModel()
+    @ObservedObject var audioPlayerManager: AudioPlayerManager
     @State private var iconSize: CGFloat = 25.0
     @State private var playIcon: CGFloat = 85.0
     @State private var playPause: Bool = false
     @State private var isFav: Bool = false
-    let action: () -> Void
+    let actionPlay: () -> Void
+    let actionBackward: () -> Void
+    let actionForward: () -> Void
+    
     
     var body: some View {
         VStack(spacing: 10) {
             // ProgressBar
-            CustomProgressBar(currentTime: 1.16, duration: 3.50)
+            CustomProgressBar(
+                currentTime: $audioPlayerManager.currentTime,
+                duration: audioPlayerManager.duration
+            ) { newTime in
+                audioPlayerManager.seek(to: newTime)
+            }
             
             HStack(spacing: 20){
                 // Backward button | 15 seconds increments...
-                Button(action: {}, label: {
+                Button(action: { actionBackward() }, label: {
                     Image(systemName: "backward.fill")
                         .resizable()
                         .scaledToFit()
@@ -32,7 +42,7 @@ struct PlayerControl: View {
                 // Play button | switch from Play and Pause icon...
                 Button(action: {
                     playPause.toggle()
-                    action()
+                    actionPlay()
                 }, label: {
                     Image(systemName: playPause ? "pause.circle.fill" : "play.circle.fill")
                         .resizable()
@@ -42,7 +52,7 @@ struct PlayerControl: View {
                 Spacer()
                 
                 // Forward button | 15 seconds increments...
-                Button(action: { }, label: {
+                Button(action: { actionForward() }, label: {
                     Image(systemName: "forward.fill")
                         .resizable()
                         .scaledToFit()
@@ -79,5 +89,5 @@ struct PlayerControl: View {
 }
 
 #Preview {
-    PlayerControl(action: {})
+    PlayerControl(audioPlayerManager: AudioPlayerManager(), actionPlay: {}, actionBackward: {}, actionForward: {})
 }

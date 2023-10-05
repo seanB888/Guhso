@@ -8,9 +8,50 @@
 import AVFoundation
 
 class AudioPlayerManager: ObservableObject {
-    private var player: AVPlayer?
+    private var player: AVPlayer? {
+        didSet {
+            setupTimeObserver()
+        }
+    }
     
     @Published var isPlaying: Bool = false
+    
+    @Published var currentTime: TimeInterval = 0
+    var duration: TimeInterval {
+        return player?.currentItem?.duration.seconds ?? 0
+    }
+    
+    private var timeObserver: Any?
+    
+    init() {
+        setupTimeObserver()
+    }
+    
+    deinit {
+        if let observer = timeObserver {
+            player?.removeTimeObserver(observer)
+        }
+    }
+    
+    private func setupTimeObserver() {
+        guard let player = player else { return }
+        let interval = CMTime(seconds: 0.5, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
+        timeObserver = player.addPeriodicTimeObserver(
+            forInterval: interval,
+            queue: DispatchQueue.main
+        ) { [weak self] time in
+            self?.currentTime = time.seconds
+        }
+    }
+    
+    func seek(to time: TimeInterval) {
+        let cmTime = CMTime(seconds: time, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
+        player?.seek(to: cmTime, completionHandler: { _ in
+            DispatchQueue.main.async {
+                self.currentTime = time  // Update currentTime after seeking
+            }
+        })
+    }
     
     func play(url: URL) {
         if player == nil {
