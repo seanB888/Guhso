@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1488699C2ACE646E00D60026 /* RSSFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1488699B2ACE646E00D60026 /* RSSFeedModel.swift */; };
 		1488699E2ACE65E200D60026 /* PodcastParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1488699D2ACE65E200D60026 /* PodcastParser.swift */; };
+		148869A02ACE66CA00D60026 /* PodcastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1488699F2ACE66C900D60026 /* PodcastViewModel.swift */; };
 		14C3ED572ACD524A009E6EAB /* RadioNuevoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3ED562ACD524A009E6EAB /* RadioNuevoApp.swift */; };
 		14C3ED592ACD524A009E6EAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3ED582ACD524A009E6EAB /* ContentView.swift */; };
 		14C3ED5B2ACD524F009E6EAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C3ED5A2ACD524F009E6EAB /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		1488699B2ACE646E00D60026 /* RSSFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedModel.swift; sourceTree = "<group>"; };
 		1488699D2ACE65E200D60026 /* PodcastParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastParser.swift; sourceTree = "<group>"; };
+		1488699F2ACE66C900D60026 /* PodcastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewModel.swift; sourceTree = "<group>"; };
 		14C3ED532ACD524A009E6EAB /* RadioNuevo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioNuevo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C3ED562ACD524A009E6EAB /* RadioNuevoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioNuevoApp.swift; sourceTree = "<group>"; };
 		14C3ED582ACD524A009E6EAB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 		148869992ACE55BD00D60026 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1488699F2ACE66C900D60026 /* PodcastViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				1488699C2ACE646E00D60026 /* RSSFeedModel.swift in Sources */,
 				1488699E2ACE65E200D60026 /* PodcastParser.swift in Sources */,
 				14C3ED6A2ACD5747009E6EAB /* Color.swift in Sources */,
+				148869A02ACE66CA00D60026 /* PodcastViewModel.swift in Sources */,
 				14C3ED672ACD53C5009E6EAB /* PlayerControl.swift in Sources */,
 				14C3ED6D2ACD5A46009E6EAB /* CustomProgressBar.swift in Sources */,
 				14C3ED712ACD629D009E6EAB /* Player.swift in Sources */,
