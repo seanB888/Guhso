@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct RadioNuevoApp: App {
+    @StateObject private var sharedData = SharedData()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(sharedData)
         }
     }
 }

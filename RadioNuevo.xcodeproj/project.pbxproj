@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		145C440B2ACEE90A00912B96 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C440A2ACEE90A00912B96 /* SharedData.swift */; };
 		1488699C2ACE646E00D60026 /* RSSFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1488699B2ACE646E00D60026 /* RSSFeedModel.swift */; };
 		1488699E2ACE65E200D60026 /* PodcastParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1488699D2ACE65E200D60026 /* PodcastParser.swift */; };
 		148869A02ACE66CA00D60026 /* PodcastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1488699F2ACE66C900D60026 /* PodcastViewModel.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		145C440A2ACEE90A00912B96 /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		1488699B2ACE646E00D60026 /* RSSFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedModel.swift; sourceTree = "<group>"; };
 		1488699D2ACE65E200D60026 /* PodcastParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastParser.swift; sourceTree = "<group>"; };
 		1488699F2ACE66C900D60026 /* PodcastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewModel.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				1488699D2ACE65E200D60026 /* PodcastParser.swift */,
+				145C440A2ACEE90A00912B96 /* SharedData.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				148869A22ACE762300D60026 /* HTMLTAG.swift in Sources */,
 				14C3ED712ACD629D009E6EAB /* Player.swift in Sources */,
 				14C3ED572ACD524A009E6EAB /* RadioNuevoApp.swift in Sources */,
+				145C440B2ACEE90A00912B96 /* SharedData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
