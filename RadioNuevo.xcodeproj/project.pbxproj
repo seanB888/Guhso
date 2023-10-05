@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1488699C2ACE646E00D60026 /* RSSFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1488699B2ACE646E00D60026 /* RSSFeedModel.swift */; };
 		14C3ED572ACD524A009E6EAB /* RadioNuevoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3ED562ACD524A009E6EAB /* RadioNuevoApp.swift */; };
 		14C3ED592ACD524A009E6EAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3ED582ACD524A009E6EAB /* ContentView.swift */; };
 		14C3ED5B2ACD524F009E6EAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C3ED5A2ACD524F009E6EAB /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1488699B2ACE646E00D60026 /* RSSFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedModel.swift; sourceTree = "<group>"; };
 		14C3ED532ACD524A009E6EAB /* RadioNuevo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioNuevo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C3ED562ACD524A009E6EAB /* RadioNuevoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioNuevoApp.swift; sourceTree = "<group>"; };
 		14C3ED582ACD524A009E6EAB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 		148869962ACE508000D60026 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1488699B2ACE646E00D60026 /* RSSFeedModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			files = (
 				14C3ED742ACD6692009E6EAB /* CircleButton.swift in Sources */,
 				14C3ED592ACD524A009E6EAB /* ContentView.swift in Sources */,
+				1488699C2ACE646E00D60026 /* RSSFeedModel.swift in Sources */,
 				14C3ED6A2ACD5747009E6EAB /* Color.swift in Sources */,
 				14C3ED672ACD53C5009E6EAB /* PlayerControl.swift in Sources */,
 				14C3ED6D2ACD5A46009E6EAB /* CustomProgressBar.swift in Sources */,
