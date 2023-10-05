@@ -11,6 +11,11 @@
 		14C3ED592ACD524A009E6EAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3ED582ACD524A009E6EAB /* ContentView.swift */; };
 		14C3ED5B2ACD524F009E6EAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C3ED5A2ACD524F009E6EAB /* Assets.xcassets */; };
 		14C3ED5E2ACD524F009E6EAB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C3ED5D2ACD524F009E6EAB /* Preview Assets.xcassets */; };
+		14C3ED672ACD53C5009E6EAB /* PlayerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3ED662ACD53C5009E6EAB /* PlayerControl.swift */; };
+		14C3ED6A2ACD5747009E6EAB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3ED692ACD5747009E6EAB /* Color.swift */; };
+		14C3ED6D2ACD5A46009E6EAB /* CustomProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3ED6C2ACD5A46009E6EAB /* CustomProgressBar.swift */; };
+		14C3ED712ACD629D009E6EAB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3ED702ACD629D009E6EAB /* Player.swift */; };
+		14C3ED742ACD6692009E6EAB /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3ED732ACD6692009E6EAB /* CircleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		14C3ED582ACD524A009E6EAB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		14C3ED5A2ACD524F009E6EAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14C3ED5D2ACD524F009E6EAB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		14C3ED662ACD53C5009E6EAB /* PlayerControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControl.swift; sourceTree = "<group>"; };
+		14C3ED692ACD5747009E6EAB /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		14C3ED6C2ACD5A46009E6EAB /* CustomProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBar.swift; sourceTree = "<group>"; };
+		14C3ED702ACD629D009E6EAB /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		14C3ED732ACD6692009E6EAB /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +42,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		148869962ACE508000D60026 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		148869992ACE55BD00D60026 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1488699A2ACE55C800D60026 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		14C3ED4A2ACD524A009E6EAB = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +82,12 @@
 		14C3ED552ACD524A009E6EAB /* RadioNuevo */ = {
 			isa = PBXGroup;
 			children = (
+				1488699A2ACE55C800D60026 /* Services */,
+				148869992ACE55BD00D60026 /* ViewModel */,
+				148869962ACE508000D60026 /* Model */,
+				14C3ED6E2ACD627D009E6EAB /* View */,
+				14C3ED682ACD572A009E6EAB /* Extension */,
+				14C3ED642ACD5396009E6EAB /* Components */,
 				14C3ED562ACD524A009E6EAB /* RadioNuevoApp.swift */,
 				14C3ED582ACD524A009E6EAB /* ContentView.swift */,
 				14C3ED5A2ACD524F009E6EAB /* Assets.xcassets */,
@@ -65,6 +102,64 @@
 				14C3ED5D2ACD524F009E6EAB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		14C3ED642ACD5396009E6EAB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				14C3ED722ACD667A009E6EAB /* Buttons */,
+				14C3ED6B2ACD5A20009E6EAB /* ProgressBar */,
+				14C3ED652ACD53A0009E6EAB /* Player */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		14C3ED652ACD53A0009E6EAB /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				14C3ED662ACD53C5009E6EAB /* PlayerControl.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		14C3ED682ACD572A009E6EAB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				14C3ED692ACD5747009E6EAB /* Color.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		14C3ED6B2ACD5A20009E6EAB /* ProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				14C3ED6C2ACD5A46009E6EAB /* CustomProgressBar.swift */,
+			);
+			path = ProgressBar;
+			sourceTree = "<group>";
+		};
+		14C3ED6E2ACD627D009E6EAB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14C3ED6F2ACD6285009E6EAB /* Core */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14C3ED6F2ACD6285009E6EAB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				14C3ED702ACD629D009E6EAB /* Player.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		14C3ED722ACD667A009E6EAB /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				14C3ED732ACD6692009E6EAB /* CircleButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +232,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14C3ED742ACD6692009E6EAB /* CircleButton.swift in Sources */,
 				14C3ED592ACD524A009E6EAB /* ContentView.swift in Sources */,
+				14C3ED6A2ACD5747009E6EAB /* Color.swift in Sources */,
+				14C3ED672ACD53C5009E6EAB /* PlayerControl.swift in Sources */,
+				14C3ED6D2ACD5A46009E6EAB /* CustomProgressBar.swift in Sources */,
+				14C3ED712ACD629D009E6EAB /* Player.swift in Sources */,
 				14C3ED572ACD524A009E6EAB /* RadioNuevoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,7 +297,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -254,7 +354,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

@@ -8,12 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showModal: Bool = false
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("IT GUHSO")
+                .font(.system(size: 50, weight: .black, design: .rounded))
+            
+            CircleButton(icon: "play.fill") {
+                //
+                showModal.toggle()
+            }
+            .sheet(isPresented: $showModal, content: {
+                Player()
+            })
         }
         .padding()
     }
