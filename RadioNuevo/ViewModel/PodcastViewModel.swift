@@ -17,6 +17,7 @@ class PodcastViewModel: ObservableObject {
     }
     
     func fetchPodcastData() {
+        
         podcastParser = PodcastParser()
         podcastParser?.parse()
         
