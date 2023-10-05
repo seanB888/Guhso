@@ -20,6 +20,7 @@ class PodcastParser: NSObject, XMLParserDelegate, ObservableObject {
     private var currentDescription = ""
     private var currentEnclosure: Enclosure?
     private var episodes: [Episode] = []
+    private var currentCharacters: String = ""
     
     func parse() {
         if let url = URL(string: "https://anchor.fm/s/341db29c/podcast/rss") {
@@ -46,22 +47,27 @@ class PodcastParser: NSObject, XMLParserDelegate, ObservableObject {
     }
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
-        switch currentElement {
-        case "title": currentTitle += string
-        case "pubDate": currentPubDate += string
-        case "description": currentDescription += string
-        default: break
-        }
+            currentCharacters += string
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        if elementName == "item" {
-            let episode = Episode(title: currentTitle, pubDate: currentPubDate, description: currentDescription, enclosure: currentEnclosure!)
-            episodes.append(episode)
-        }
-        if elementName == "channel" {
-            podcast = Podcast(title: currentTitle, episodes: episodes)
-        }
+            switch elementName {
+            case "title":
+                currentTitle = currentCharacters.trimmingCharacters(in: .whitespacesAndNewlines)
+            case "pubDate":
+                currentPubDate = currentCharacters.trimmingCharacters(in: .whitespacesAndNewlines)
+            case "description":
+                currentDescription = currentCharacters.trimmingCharacters(in: .whitespacesAndNewlines)
+            case "item":
+                let episode = Episode(title: currentTitle, pubDate: currentPubDate, description: currentDescription, enclosure: currentEnclosure!)
+                episodes.append(episode)
+            case "channel":
+                podcast = Podcast(title: currentTitle, episodes: episodes)
+            default:
+                break
+            }
+            // Reset currentCharacters for the next element
+            currentCharacters = ""
     }
     
     func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {

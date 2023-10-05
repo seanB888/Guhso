@@ -14,13 +14,25 @@ struct Podcast: Codable {
 
 struct Episode: Codable {
     var title: String
-    var pubDate: String
-    var description: String
-    var enclosure: Enclosure
+    var pubDate: String? // Changed from String to Date
+    var description: String?
+    var enclosure: Enclosure?
+    var author: Author? // Nested model
 }
 
 struct Enclosure: Codable {
     var url: String
     var length: String
     var type: String
+}
+
+struct Author: Codable {
+    var name: String
+    var email: String
+}
+
+enum EpisodeStatus: String, Codable {
+    case published
+    case draft
+    case archived
 }

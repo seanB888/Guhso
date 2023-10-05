@@ -10,10 +10,12 @@ import SwiftUI
 struct Player: View {
     @ObservedObject var viewModel = PodcastViewModel()
     @Environment(\.dismiss) private var dismiss
-    @State private var showTitle = "Button Control"
-    @State private var description = "You can further customize the CustomButton by adding more properties or using other SwiftUI views and modifiers. For instance, you might want to add an icon/image next to the text, add shadows, or provide different styles (e.g., outline buttons)."
     @State private var picSize: CGFloat = 250
     @State private var shareImage = Image("logo")
+    
+    private var currentEpisode: Episode? {
+        viewModel.podcast?.episodes.first
+    }
     
     var body: some View {
         ZStack {
@@ -43,10 +45,10 @@ struct Player: View {
                         .foregroundStyle(Color.theme.accent1)
                     Spacer()
                     // Share button...
-                    //                    CircleButton(icon: "ellipsis", action: {
-                    //
-                    //                    }, backgroundColor: Color.theme.brand)
-                    //                        .rotationEffect(Angle(degrees: 90))
+//                    CircleButton(icon: "ellipsis", action: {
+//
+//                    }, backgroundColor: Color.theme.brand)
+//                        .rotationEffect(Angle(degrees: 90))
                     
                     ShareLink(item: shareImage,
                               preview: SharePreview("Share this Episode", image: shareImage)
@@ -62,8 +64,8 @@ struct Player: View {
                 
                 // Title of the show...
                 VStack {
-                    if let podcast = viewModel.podcast {
-                        Text(podcast.title)
+                    if let episodeTitle = currentEpisode?.title {
+                        Text(episodeTitle)
                     } else {
                         Text("loading...")
                     }
@@ -76,25 +78,34 @@ struct Player: View {
                 
                 // Description of the show...
                 VStack {
-                    //                    if let podcast = viewModel.podcast {
-                    //                        Text(description)
-                    //                    } else {
-                    //                        Text("loading...")
-                    //                    }
-                    Text(description)
+                    if let episodeDescription = currentEpisode?.description {
+                        Text(episodeDescription.strippedHTMLTags)
+                    } else {
+                        Text("loading...")
+                    }
+                    
                 }
                 .foregroundStyle(Color.gray)
                 .font(.body)
                 .lineLimit(3)
                 
                 // Player Controls...
-                PlayerControl()
+                PlayerControl(action: {
+                    if let url = URL(string: currentEpisode?.enclosure?.url ?? "") {
+                        viewModel.audioPlayerManager.togglePlayback(url: url)
+                    }
+                })
                     .padding(.top, 10)
                     .padding(.bottom, 50)
                 
             }
             .padding(25)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+        }
+        .onAppear {
+            if viewModel.podcast == nil {
+                viewModel.fetchPodcastData()
+            }
         }
     }
 }

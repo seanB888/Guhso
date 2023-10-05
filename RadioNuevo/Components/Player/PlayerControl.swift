@@ -12,6 +12,7 @@ struct PlayerControl: View {
     @State private var playIcon: CGFloat = 85.0
     @State private var playPause: Bool = false
     @State private var isFav: Bool = false
+    let action: () -> Void
     
     var body: some View {
         VStack(spacing: 10) {
@@ -31,6 +32,7 @@ struct PlayerControl: View {
                 // Play button | switch from Play and Pause icon...
                 Button(action: {
                     playPause.toggle()
+                    action()
                 }, label: {
                     Image(systemName: playPause ? "pause.circle.fill" : "play.circle.fill")
                         .resizable()
@@ -40,7 +42,7 @@ struct PlayerControl: View {
                 Spacer()
                 
                 // Forward button | 15 seconds increments...
-                Button(action: {}, label: {
+                Button(action: { }, label: {
                     Image(systemName: "forward.fill")
                         .resizable()
                         .scaledToFit()
@@ -52,6 +54,7 @@ struct PlayerControl: View {
             HStack(spacing: 20) {
                 Button(action: {
                     // Logic here
+                    
                 }, label: {
                     Image(systemName: "arrowshape.turn.up.right.circle.fill")
                         .resizable()
@@ -62,6 +65,7 @@ struct PlayerControl: View {
                 // Favorite button...
                 Button(action: {
                     isFav.toggle()
+                    
                 }, label: {
                     Image(systemName: isFav ? "suit.heart.fill" : "suit.heart")
                         .resizable()
@@ -75,5 +79,5 @@ struct PlayerControl: View {
 }
 
 #Preview {
-    PlayerControl()
+    PlayerControl(action: {})
 }
