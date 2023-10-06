@@ -8,22 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var viewModel: PodcastViewModel
     @State private var showModal: Bool = false
     
     var body: some View {
-        VStack {
-            Text("IT GUHSO")
-                .font(.system(size: 50, weight: .black, design: .rounded))
-            
-            CircleButton(icon: "play.fill") {
-                //
-                showModal.toggle()
-            }
-            .sheet(isPresented: $showModal, content: {
-                Player()
-            })
-        }
-        .padding()
+        
+        Home()
+            .environmentObject(PodcastViewModel())
     }
 }
 

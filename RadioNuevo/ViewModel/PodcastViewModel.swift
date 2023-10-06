@@ -24,11 +24,12 @@ class PodcastViewModel: ObservableObject {
     }
     
     func fetchPodcastData() {
-        
-        podcastParser = PodcastParser()
+        podcastParser = PodcastParser { [weak self] podcast in
+            self?.podcast = podcast
+        }
         podcastParser?.parse()
         
         // Observe the podcast data from the parser
-        podcastParser?.$podcast.assign(to: &$podcast)
+        // podcastParser?.$podcast.assign(to: &$podcast)
     }
 }
