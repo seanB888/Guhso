@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct RadioNuevoApp: App {
-    @StateObject var sharedData = SharedData()
+    @StateObject private var viewModel = PodcastViewModel()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(sharedData)
+                .environmentObject(viewModel)
         }
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 class PodcastViewModel: ObservableObject {
     @Published var podcast: Podcast?
-    var podcastParser: PodcastParser?
+    private var podcastParser: PodcastParser?
     var audioPlayerManager = AudioPlayerManager()
     
     init() {

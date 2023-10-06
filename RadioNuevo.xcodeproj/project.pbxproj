@@ -22,6 +22,7 @@
 		14C3ED6D2ACD5A46009E6EAB /* CustomProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3ED6C2ACD5A46009E6EAB /* CustomProgressBar.swift */; };
 		14C3ED712ACD629D009E6EAB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3ED702ACD629D009E6EAB /* Player.swift */; };
 		14C3ED742ACD6692009E6EAB /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3ED732ACD6692009E6EAB /* CircleButton.swift */; };
+		14EAD7982AD03EBF00C001CB /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EAD7972AD03EBF00C001CB /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		14C3ED6C2ACD5A46009E6EAB /* CustomProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBar.swift; sourceTree = "<group>"; };
 		14C3ED702ACD629D009E6EAB /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		14C3ED732ACD6692009E6EAB /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		14EAD7972AD03EBF00C001CB /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				14C3ED702ACD629D009E6EAB /* Player.swift */,
+				14EAD7972AD03EBF00C001CB /* Home.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				1488699C2ACE646E00D60026 /* RSSFeedModel.swift in Sources */,
 				1488699E2ACE65E200D60026 /* PodcastParser.swift in Sources */,
 				14C3ED6A2ACD5747009E6EAB /* Color.swift in Sources */,
+				14EAD7982AD03EBF00C001CB /* Home.swift in Sources */,
 				148869A02ACE66CA00D60026 /* PodcastViewModel.swift in Sources */,
 				14C3ED672ACD53C5009E6EAB /* PlayerControl.swift in Sources */,
 				14C3ED6D2ACD5A46009E6EAB /* CustomProgressBar.swift in Sources */,

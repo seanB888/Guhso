@@ -14,27 +14,16 @@ struct Podcast: Codable {
 
 struct Episode: Codable {
     var title: String
-    var pubDate: Date? // Changed from String to Date
+    var pubDate: String? // Changed from String to Date
     var description: String?
     var enclosure: Enclosure?
     var author: Author? // Nested model
     
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        title = try container.decode(String.self, forKey: .title)
-        description = try container.decodeIfPresent(String.self, forKey: .description)
-        enclosure = try container.decodeIfPresent(Enclosure.self, forKey: .enclosure)
-        author = try container.decodeIfPresent(Author.self, forKey: .author)
-        
-        // Convert pubDate string to Date
-        let pubDateString = try container.decodeIfPresent(String.self, forKey: .pubDate)
-        if let dateString = pubDateString {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "d MMM yyyy"
-            pubDate = dateFormatter.date(from: dateString)
-        } else {
-            pubDate = nil
-        }
+    init(title: String, pubDate: String, description: String, enclosure: Enclosure) {
+        self.title = title
+        self.pubDate = pubDate
+        self.description = description
+        self.enclosure = enclosure
     }
 }
 
@@ -42,6 +31,12 @@ struct Enclosure: Codable {
     var url: String
     var length: String
     var type: String
+    
+    init(url: String, length: String, type: String) {
+        self.url = url
+        self.length = length
+        self.type = type
+    }
 }
 
 struct Author: Codable {
