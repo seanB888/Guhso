@@ -9,11 +9,18 @@ import Foundation
 
 class PodcastViewModel: ObservableObject {
     @Published var podcast: Podcast?
+    @Published var selectedEpisode: Episode?
+    @Published var isPlayerPresented: Bool = false
     private var podcastParser: PodcastParser?
     var audioPlayerManager = AudioPlayerManager()
     
     init() {
         fetchPodcastData()
+    }
+    
+    func selectEpisode(_ episode: Episode) {
+        selectedEpisode = episode
+        audioPlayerManager.stopPlayback() // Stop any currently playing episode
     }
     
     func fetchPodcastData() {

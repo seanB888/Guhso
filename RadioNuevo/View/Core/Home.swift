@@ -11,14 +11,17 @@ struct Home: View {
     @EnvironmentObject var viewModel: PodcastViewModel
     
     var body: some View {
-        if let podcast = viewModel.podcast {
-            VStack {
-                Text(podcast.title)
-                    .font(.system(size: 30, weight: .bold, design: .serif))
-                
-            }
-        } else {
-            Text("Loading...")
+        List(viewModel.podcast?.episodes ?? [], id: \.title) { episode in
+            Button(action: {
+                viewModel.selectedEpisode = episode
+                viewModel.isPlayerPresented = true
+            }, label: {
+                Text(episode.title)
+            })
+        }
+        .sheet(isPresented: $viewModel.isPlayerPresented) {
+            Player()
+                .environmentObject(viewModel)
         }
     }
 }

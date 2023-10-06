@@ -75,4 +75,10 @@ class AudioPlayerManager: ObservableObject {
         let newTime = CMTimeAdd(currentTime, CMTimeMake(value: seconds, timescale: 1))
         player?.seek(to: newTime)
     }
+    
+    func stopPlayback() {
+        player?.pause()
+        seek(to: 0)
+        player = nil
+    }
 }
