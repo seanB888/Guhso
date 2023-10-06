@@ -34,9 +34,11 @@ class PodcastParser: NSObject, XMLParserDelegate, ObservableObject {
                 return
             }
             
-            let parser = XMLParser(data: data)
-            parser.delegate = self
-            parser.parse()
+            DispatchQueue.main.async {
+                let parser = XMLParser(data: data)
+                parser.delegate = self
+                parser.parse()
+            }
         }
         task.resume() // This starts the data task
     }
