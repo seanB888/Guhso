@@ -76,7 +76,7 @@ struct Player: View {
                     PlayerControl(
                         audioPlayerManager: viewModel.audioPlayerManager,
                         actionPlay: {
-                            if let url = URL(viewModel.selectedEpisode?.enclosure?.url ?? "") {
+                            if let url = URL(string: viewModel.selectedEpisode?.enclosure?.url ?? "") {
                                 viewModel.audioPlayerManager.togglePlayback(url: url)
                             }
                         },
@@ -94,8 +94,8 @@ struct Player: View {
             }
         }
         .onAppear {
-            if viewModel.podcast == nil {
-                viewModel.fetchPodcastData()
+            if let url = URL(string: currentEpisode?.enclosure?.url ?? "") {
+                viewModel.audioPlayerManager.play(url: url)
             }
         }
     }

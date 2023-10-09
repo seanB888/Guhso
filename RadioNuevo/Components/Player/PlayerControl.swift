@@ -41,10 +41,9 @@ struct PlayerControl: View {
                 
                 // Play button | switch from Play and Pause icon...
                 Button(action: {
-                    playPause.toggle()
                     actionPlay()
                 }, label: {
-                    Image(systemName: playPause ? "pause.circle.fill" : "play.circle.fill")
+                    Image(systemName: audioPlayerManager.isPlaying ? "pause.circle.fill" : "play.circle.fill")
                         .resizable()
                         .scaledToFit()
                         .frame(width: playIcon, height: playIcon)
