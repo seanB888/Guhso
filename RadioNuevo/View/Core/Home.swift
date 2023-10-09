@@ -13,7 +13,7 @@ struct Home: View {
     var body: some View {
         List(viewModel.podcast?.episodes ?? [], id: \.title) { episode in
             Button(action: {
-                viewModel.selectedEpisode = episode
+                viewModel.selectedEpisode(episode)
                 viewModel.isPlayerPresented = true
             }, label: {
                 Text(episode.title)
