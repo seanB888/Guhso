@@ -7,7 +7,6 @@
 
 import Foundation
 import Firebase
-import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class FirestoreManager: ObservableObject {
@@ -32,7 +31,7 @@ class FirestoreManager: ObservableObject {
     
     func addFavorite(_ favorite: Favorite) {
         do {
-            var userFavorite = favorite
+            let userFavorite = favorite
             let _ = try db.collection("favorites").addDocument(from: userFavorite) { error in
                 if let error = error {
                     print("Error adding document: \(error.localizedDescription)")
