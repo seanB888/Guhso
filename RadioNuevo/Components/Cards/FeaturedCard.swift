@@ -16,12 +16,8 @@ struct FeaturedCrad: View {
     
     var body: some View {
         VStack {
-            Text("Featured Card")
-                .font(.largeTitle)
-            
             GeometryReader { proxy in
                 ZStack(alignment: .bottom) {
-                    
                     Image("logo2")
                         .resizable()
                         .scaledToFill()
@@ -35,11 +31,7 @@ struct FeaturedCrad: View {
                         .offset(y: 42)
                     
                     HStack {
-                        CircleButton(icon: isPlaying ? "pause.fill" : "play.fill",
-                                     action: {
-                            isPlaying.toggle()
-                            // play/pause logic here...
-                        },backgroundColor: Color.theme.brand, foregroundColor: Color.black, iconSize: 85)
+                        PlayButton(action: { isPlaying.toggle() }, imageName: isPlaying ? "pause.fill" : "play.fill", buttonColor: Color.theme.brand, imageColor: Color.theme.background)
                         
                         VStack(alignment: .leading) {
                             Text(showTitle)
@@ -60,7 +52,6 @@ struct FeaturedCrad: View {
                     .offset(y: 35)
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .bottomLeading)
-                    
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
