@@ -16,12 +16,8 @@ struct FeaturedCrad: View {
     
     var body: some View {
         VStack {
-            Text("Featured Card")
-                .font(.largeTitle)
-            
             GeometryReader { proxy in
                 ZStack(alignment: .bottom) {
-                    
                     Image("logo2")
                         .resizable()
                         .scaledToFill()
@@ -60,7 +56,6 @@ struct FeaturedCrad: View {
                     .offset(y: 35)
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .bottomLeading)
-                    
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
