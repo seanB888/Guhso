@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1405739E2AD8D2D50089B8D6 /* FeaturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405739D2AD8D2D50089B8D6 /* FeaturesView.swift */; };
-		140573A12AD8D2FE0089B8D6 /* FeaturedCrad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140573A02AD8D2FE0089B8D6 /* FeaturedCrad.swift */; };
+		140573A12AD8D2FE0089B8D6 /* FeaturedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140573A02AD8D2FE0089B8D6 /* FeaturedCard.swift */; };
 		145767BF2AD3C0E60067D62F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 145767BE2AD3C0E60067D62F /* GoogleService-Info.plist */; };
 		145767CE2AD3C1FA0067D62F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 145767CD2AD3C1FA0067D62F /* FirebaseAuth */; };
 		145767F92AD3C2790067D62F /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145767F82AD3C2790067D62F /* Login.swift */; };
@@ -18,12 +18,14 @@
 		145768032AD428ED0067D62F /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145768022AD428ED0067D62F /* AppUser.swift */; };
 		145768052AD429190067D62F /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145768042AD429190067D62F /* FirestoreManager.swift */; };
 		145C440B2ACEE90A00912B96 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C440A2ACEE90A00912B96 /* SharedData.swift */; };
+		147EDE2F2AF4B866007E8A54 /* Navbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147EDE2E2AF4B866007E8A54 /* Navbar.swift */; };
 		1488699C2ACE646E00D60026 /* RSSFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1488699B2ACE646E00D60026 /* RSSFeedModel.swift */; };
 		1488699E2ACE65E200D60026 /* PodcastParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1488699D2ACE65E200D60026 /* PodcastParser.swift */; };
 		148869A02ACE66CA00D60026 /* PodcastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1488699F2ACE66C900D60026 /* PodcastViewModel.swift */; };
 		148869A22ACE762300D60026 /* HTMLTAG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148869A12ACE762300D60026 /* HTMLTAG.swift */; };
 		148869A52ACE77F500D60026 /* AudioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148869A42ACE77F500D60026 /* AudioPlayerManager.swift */; };
 		149F01ED2ADF7469006BD687 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 149F01EC2ADF7469006BD687 /* FirebaseFirestoreSwift */; };
+		149F01EF2AE08EAF006BD687 /* AvertCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149F01EE2AE08EAF006BD687 /* AvertCard.swift */; };
 		14C3ED572ACD524A009E6EAB /* RadioNuevoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3ED562ACD524A009E6EAB /* RadioNuevoApp.swift */; };
 		14C3ED592ACD524A009E6EAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3ED582ACD524A009E6EAB /* ContentView.swift */; };
 		14C3ED5B2ACD524F009E6EAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C3ED5A2ACD524F009E6EAB /* Assets.xcassets */; };
@@ -33,12 +35,15 @@
 		14C3ED6D2ACD5A46009E6EAB /* CustomProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3ED6C2ACD5A46009E6EAB /* CustomProgressBar.swift */; };
 		14C3ED712ACD629D009E6EAB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3ED702ACD629D009E6EAB /* Player.swift */; };
 		14C3ED742ACD6692009E6EAB /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3ED732ACD6692009E6EAB /* CircleButton.swift */; };
+		14E2346C2AF274E4003AE7D3 /* EpisodeStripCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E2346B2AF274E4003AE7D3 /* EpisodeStripCard.swift */; };
+		14E2346E2AF30012003AE7D3 /* SmallEpisodeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E2346D2AF30012003AE7D3 /* SmallEpisodeCard.swift */; };
 		14EAD7982AD03EBF00C001CB /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EAD7972AD03EBF00C001CB /* Home.swift */; };
+		14FE99532AE1829B00A67806 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE99522AE1829B00A67806 /* PlayButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1405739D2AD8D2D50089B8D6 /* FeaturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesView.swift; sourceTree = "<group>"; };
-		140573A02AD8D2FE0089B8D6 /* FeaturedCrad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCrad.swift; sourceTree = "<group>"; };
+		140573A02AD8D2FE0089B8D6 /* FeaturedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCard.swift; sourceTree = "<group>"; };
 		145767BE2AD3C0E60067D62F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		145767F82AD3C2790067D62F /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		145767FA2AD3C2900067D62F /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
@@ -47,11 +52,13 @@
 		145768022AD428ED0067D62F /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		145768042AD429190067D62F /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		145C440A2ACEE90A00912B96 /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
+		147EDE2E2AF4B866007E8A54 /* Navbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navbar.swift; sourceTree = "<group>"; };
 		1488699B2ACE646E00D60026 /* RSSFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedModel.swift; sourceTree = "<group>"; };
 		1488699D2ACE65E200D60026 /* PodcastParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastParser.swift; sourceTree = "<group>"; };
 		1488699F2ACE66C900D60026 /* PodcastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewModel.swift; sourceTree = "<group>"; };
 		148869A12ACE762300D60026 /* HTMLTAG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLTAG.swift; sourceTree = "<group>"; };
 		148869A42ACE77F500D60026 /* AudioPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerManager.swift; sourceTree = "<group>"; };
+		149F01EE2AE08EAF006BD687 /* AvertCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvertCard.swift; sourceTree = "<group>"; };
 		14C3ED532ACD524A009E6EAB /* RadioNuevo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioNuevo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C3ED562ACD524A009E6EAB /* RadioNuevoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioNuevoApp.swift; sourceTree = "<group>"; };
 		14C3ED582ACD524A009E6EAB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,7 +69,10 @@
 		14C3ED6C2ACD5A46009E6EAB /* CustomProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBar.swift; sourceTree = "<group>"; };
 		14C3ED702ACD629D009E6EAB /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		14C3ED732ACD6692009E6EAB /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		14E2346B2AF274E4003AE7D3 /* EpisodeStripCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeStripCard.swift; sourceTree = "<group>"; };
+		14E2346D2AF30012003AE7D3 /* SmallEpisodeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallEpisodeCard.swift; sourceTree = "<group>"; };
 		14EAD7972AD03EBF00C001CB /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		14FE99522AE1829B00A67806 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +99,10 @@
 		1405739F2AD8D2E00089B8D6 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
-				140573A02AD8D2FE0089B8D6 /* FeaturedCrad.swift */,
+				140573A02AD8D2FE0089B8D6 /* FeaturedCard.swift */,
+				149F01EE2AE08EAF006BD687 /* AvertCard.swift */,
+				14E2346B2AF274E4003AE7D3 /* EpisodeStripCard.swift */,
+				14E2346D2AF30012003AE7D3 /* SmallEpisodeCard.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -102,6 +115,14 @@
 				145767FC2AD3C2A00067D62F /* Profile.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		147EDE2D2AF4B82F007E8A54 /* Navi */ = {
+			isa = PBXGroup;
+			children = (
+				147EDE2E2AF4B866007E8A54 /* Navbar.swift */,
+			);
+			path = Navi;
 			sourceTree = "<group>";
 		};
 		148869962ACE508000D60026 /* Model */ = {
@@ -194,6 +215,7 @@
 		14C3ED642ACD5396009E6EAB /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				147EDE2D2AF4B82F007E8A54 /* Navi */,
 				1405739F2AD8D2E00089B8D6 /* Cards */,
 				14C3ED722ACD667A009E6EAB /* Buttons */,
 				14C3ED6B2ACD5A20009E6EAB /* ProgressBar */,
@@ -250,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				14C3ED732ACD6692009E6EAB /* CircleButton.swift */,
+				14FE99522AE1829B00A67806 /* PlayButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -337,11 +360,14 @@
 				14C3ED742ACD6692009E6EAB /* CircleButton.swift in Sources */,
 				148869A52ACE77F500D60026 /* AudioPlayerManager.swift in Sources */,
 				14C3ED592ACD524A009E6EAB /* ContentView.swift in Sources */,
+				14FE99532AE1829B00A67806 /* PlayButton.swift in Sources */,
 				1488699C2ACE646E00D60026 /* RSSFeedModel.swift in Sources */,
 				1488699E2ACE65E200D60026 /* PodcastParser.swift in Sources */,
 				14C3ED6A2ACD5747009E6EAB /* Color.swift in Sources */,
 				145767FF2AD423340067D62F /* AuthViewModel.swift in Sources */,
 				145767F92AD3C2790067D62F /* Login.swift in Sources */,
+				14E2346C2AF274E4003AE7D3 /* EpisodeStripCard.swift in Sources */,
+				147EDE2F2AF4B866007E8A54 /* Navbar.swift in Sources */,
 				14EAD7982AD03EBF00C001CB /* Home.swift in Sources */,
 				148869A02ACE66CA00D60026 /* PodcastViewModel.swift in Sources */,
 				14C3ED672ACD53C5009E6EAB /* PlayerControl.swift in Sources */,
@@ -351,7 +377,9 @@
 				145767FB2AD3C2900067D62F /* SignUp.swift in Sources */,
 				145768032AD428ED0067D62F /* AppUser.swift in Sources */,
 				14C3ED572ACD524A009E6EAB /* RadioNuevoApp.swift in Sources */,
-				140573A12AD8D2FE0089B8D6 /* FeaturedCrad.swift in Sources */,
+				14E2346E2AF30012003AE7D3 /* SmallEpisodeCard.swift in Sources */,
+				149F01EF2AE08EAF006BD687 /* AvertCard.swift in Sources */,
+				140573A12AD8D2FE0089B8D6 /* FeaturedCard.swift in Sources */,
 				145C440B2ACEE90A00912B96 /* SharedData.swift in Sources */,
 				1405739E2AD8D2D50089B8D6 /* FeaturesView.swift in Sources */,
 			);

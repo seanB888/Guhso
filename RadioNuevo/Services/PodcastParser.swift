@@ -46,6 +46,9 @@ class PodcastParser: NSObject, XMLParserDelegate, ObservableObject {
     // MARK: - XML Parser Delegate
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         
+        print("Element: \(elementName)")  // Debugging
+        print("Attributes: \(attributeDict)")  // Debugging
+        
         currentElement = elementName
         if currentElement == "item" {
             currentTitle = ""

@@ -7,37 +7,47 @@
 
 import SwiftUI
 
-struct FeaturedCrad: View {
-    @State private var showTitle = "Online Dating"
-    @State private var showEpisode: Int = 4
-    @State private var showDate = Date()
-    @State private var isPlaying: Bool = false
-    private var gradient = Gradient(colors: [.clear, .white.opacity(0.5)])
+struct FeaturedCard: View {
+    let action: () -> Void
+    var showTitle: String
+    var showEpisode: Int
+    var showDate: Date
+    @State var isPlaying: Bool
+    var imageName: String
+    
+    private let gradient = Gradient(colors: [.clear, .white.opacity(0.5)])
+    private let cornerRadius: CGFloat = 24.0
+    private let imageScaleFactor: CGFloat = 1.3
     
     var body: some View {
         VStack {
             GeometryReader { proxy in
                 ZStack(alignment: .bottom) {
-                    Image("logo2")
+                    Image(imageName)
                         .resizable()
                         .scaledToFill()
-                        .cornerRadius(24)
-                        .frame(height: proxy.size.width / 1.3)
+                        .cornerRadius(cornerRadius)
+                        .frame(height: proxy.size.width / imageScaleFactor)
                     
-                    RoundedRectangle(cornerRadius: 24.0)
+                    RoundedRectangle(cornerRadius: cornerRadius)
                         .fill(gradient)
                         .cornerRadius(24)
-                        .frame(height: proxy.size.width / 1.3)
-                        .offset(y: 42)
+                        .frame(height: proxy.size.width / imageScaleFactor)
+                        .offset(y: 45)
                     
                     HStack {
-                        PlayButton(action: { isPlaying.toggle() }, imageName: isPlaying ? "pause.fill" : "play.fill", buttonColor: Color.theme.brand, imageColor: Color.theme.background)
+                        PlayButton(
+                            action: { action() },
+                            imageName: isPlaying ? "pause.fill" : "play.fill",
+                            buttonColor: Color.theme.brand,
+                            imageColor: Color.theme.background)
                         
                         VStack(alignment: .leading) {
                             Text(showTitle)
                                 .font(.title)
                                 .fontWeight(.bold)
                                 .foregroundStyle(Color.theme.brand)
+                                .lineLimit(1)
                             
                             Text("Episode: \(showEpisode)")
                                 .font(.callout)
@@ -56,10 +66,9 @@ struct FeaturedCrad: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
-        .padding()
     }
 }
 
 #Preview {
-    FeaturedCrad()
+    FeaturedCard(action: {}, showTitle: "Tea or Not to Tea", showEpisode: 4, showDate: Date(), isPlaying: false, imageName: "logo2")
 }
